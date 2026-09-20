@@ -1,4 +1,4 @@
-# Consulterra — Luc Nizet
+# Consulterra · Luc Nizet
 
 Premium portfolio-site (HTML / CSS / JS). Geen buildstap.
 

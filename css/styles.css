@@ -500,6 +500,22 @@ main {
   margin-top: 2rem;
 }
 
+@media (max-width: 699px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn-ghost {
+    order: -1;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -536,7 +552,7 @@ main {
   background: color-mix(in srgb, var(--white) 8%, transparent);
 }
 
-/* Intro strip — 3 even kolommen, mobile-first */
+/* Intro strip — desktop 3 kolommen · mobile carousel */
 
 .intro-strip {
   background: var(--navy);
@@ -554,49 +570,101 @@ main {
   align-items: center;
   gap: 0;
   text-align: center;
-  font-size: clamp(0.65rem, 2.8vw, 0.88rem);
+  font-size: clamp(0.78rem, 1.8vw, 0.9rem);
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .intro-strip-list li {
   min-width: 0;
-  padding: 0.35rem 0.4rem;
+  padding: 0.35rem 0.75rem;
   line-height: 1.35;
-  overflow-wrap: anywhere;
-  hyphens: auto;
 }
 
 .intro-strip-list li:not(:last-child) {
   border-right: 1px solid color-mix(in srgb, var(--white) 18%, transparent);
 }
 
-@media (min-width: 480px) {
+@media (min-width: 700px) {
   .intro-strip {
     padding: 1.15rem 0;
   }
+}
+
+/* Mobile: vloeiende continue marquee */
+@media (max-width: 699px) {
+  .intro-strip {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .intro-strip .container {
+    width: 100%;
+    max-width: none;
+    overflow: hidden;
+  }
 
   .intro-strip-list {
-    letter-spacing: 0.14em;
-    font-size: clamp(0.78rem, 1.8vw, 0.9rem);
+    display: flex;
+    grid-template-columns: none;
+    width: max-content;
+    align-items: center;
+    gap: 0;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    will-change: transform;
+  }
+
+  .intro-strip-list.is-marquee {
+    animation: intro-marquee 22s linear infinite;
   }
 
   .intro-strip-list li {
-    padding: 0.25rem 0.75rem;
+    flex: 0 0 auto;
+    padding: 1.05rem 1.5rem;
+    border-right: 0 !important;
+    white-space: nowrap;
     overflow-wrap: normal;
     hyphens: none;
   }
-}
 
-@media (max-width: 379px) {
-  .intro-strip-list {
-    letter-spacing: 0.04em;
-    font-size: 0.62rem;
+  .intro-strip-list li + li {
+    position: relative;
   }
 
-  .intro-strip-list li {
-    padding-inline: 0.25rem;
+  .intro-strip-list li + li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--white) 45%, transparent);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes intro-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 699px) and (prefers-reduced-motion: reduce) {
+  .intro-strip-list.is-marquee {
+    animation: none;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .intro-strip-list.is-marquee li[aria-hidden='true'] {
+    display: none;
   }
 }
 
@@ -834,7 +902,28 @@ h2 {
 
 .expertise-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.75rem;
+}
+
+@media (min-width: 640px) and (max-width: 899px) {
+  .expertise-grid {
+    gap: 1.5rem;
+  }
+
+  .expertise-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  .expertise-panel .media-ph {
+    aspect-ratio: 1;
+  }
+
+  .expertise-panel-body {
+    padding-top: 0;
+  }
 }
 
 @media (min-width: 900px) {
@@ -875,10 +964,6 @@ h2 {
   margin: 0;
   color: color-mix(in srgb, var(--white) 72%, transparent);
   font-size: 0.98rem;
-}
-
-.section-expertise .h-scroll-hint {
-  color: color-mix(in srgb, var(--white) 55%, transparent);
 }
 
 .section-expertise .media-ph-soil {
@@ -957,7 +1042,7 @@ h2 {
   }
 }
 
-/* Mobile horizontal scrollers */
+/* Projects scroller (mobile only) */
 
 .h-scroll-hint {
   margin: 0.65rem 0 0;
@@ -966,51 +1051,52 @@ h2 {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--faint);
+  text-align: center;
 }
 
 @media (max-width: 899px) {
-  .section-expertise,
   .section-projects {
     overflow-x: clip;
   }
 
-  .expertise-grid[data-h-scroll],
   .projects-rail[data-h-scroll] {
+    /* Links gelijk met de pagina-inhoud; rechts een peek van de volgende */
+    --h-peek: 2.75rem;
+    --h-gap: 0.75rem;
+    --h-slide: calc(100% - var(--h-peek));
+
     display: flex;
-    gap: 0.85rem;
+    gap: var(--h-gap);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
-    scroll-padding-inline: 0.75rem;
+    scroll-padding-inline-start: 0;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
-    margin-inline: -0.75rem;
-    padding-inline: 0.75rem;
-    padding-bottom: 0.5rem;
-    width: calc(100% + 1.5rem);
+    width: calc(100% + 0.75rem);
     max-width: none;
+    margin: 0 -0.75rem 0 0;
+    padding-inline: 0;
+    padding-inline-end: var(--h-peek);
+    padding-bottom: 0.35rem;
+    box-sizing: border-box;
     scrollbar-width: none;
   }
 
-  .expertise-grid[data-h-scroll]::-webkit-scrollbar,
   .projects-rail[data-h-scroll]::-webkit-scrollbar {
     display: none;
   }
 
-  .expertise-grid[data-h-scroll] .expertise-panel,
-  .projects-rail[data-h-scroll] .project-slide {
-    flex: 0 0 min(82vw, 20rem);
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-
-  /* Mobiel: alle cases identiek — geen feature-variant */
   .projects-rail[data-h-scroll] .project-slide,
   .projects-rail[data-h-scroll] .project-slide--feature {
     display: flex;
     flex-direction: column;
-    flex: 0 0 min(82vw, 20rem);
+    flex: 0 0 var(--h-slide);
+    width: var(--h-slide);
+    max-width: var(--h-slide);
     gap: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   .projects-rail[data-h-scroll] .project-slide--feature {
@@ -1926,16 +2012,6 @@ h2 {
   .hero-content {
     width: min(100% - 1.25rem, var(--max));
     padding-bottom: 3rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-    justify-content: center;
   }
 
   .section {

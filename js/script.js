@@ -151,6 +151,51 @@ initCookies();
 initHashScroll();
 initHScroll();
 initCareerList();
+initIntroCarousel();
+
+function initIntroCarousel() {
+  const track = document.querySelector('[data-intro-carousel]');
+  if (!track) return;
+
+  const mq = window.matchMedia('(max-width: 699px)');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const originals = [...track.children];
+  if (originals.length < 2) return;
+
+  let clones = [];
+
+  function sync() {
+    const wantMarquee = mq.matches && !reduce.matches;
+
+    if (wantMarquee && !clones.length) {
+      originals.forEach((item) => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+        clones.push(clone);
+      });
+    } else if (!wantMarquee && clones.length) {
+      clones.forEach((c) => c.remove());
+      clones = [];
+    }
+
+    track.classList.toggle('is-marquee', wantMarquee);
+  }
+
+  if (typeof mq.addEventListener === 'function') {
+    mq.addEventListener('change', sync);
+  } else {
+    mq.addListener(sync);
+  }
+
+  if (typeof reduce.addEventListener === 'function') {
+    reduce.addEventListener('change', sync);
+  } else if (typeof reduce.addListener === 'function') {
+    reduce.addListener(sync);
+  }
+
+  sync();
+}
 
 function initYear() {
   const year = String(new Date().getFullYear());
