@@ -339,13 +339,13 @@ main {
 
   .nav-list {
     flex-direction: row;
-    gap: 1.85rem;
+    gap: 1.5rem;
     padding: 0;
   }
 
   .nav-list button {
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
     opacity: 0.85;
   }
@@ -359,8 +359,8 @@ main {
   .btn-nav {
     display: inline-flex;
     align-items: center;
-    padding: 0.45rem 1rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 1.05rem;
+    font-size: 0.95rem;
   }
 
   .nav-toggle {
