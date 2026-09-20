@@ -22,7 +22,21 @@
     <meta property="og:image" content="images/banner.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://consulterra.be/" />
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon_io/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
+    <link rel="apple-touch-icon" href="favicon_io/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -51,6 +65,7 @@
         },
         "alumniOf": { "@type": "CollegeOrUniversity", "name": "KU Leuven" },
         "image": "images/LucNizet.jpg",
+        "email": "lucnizet@groupdecloedt.be",
         "url": "https://www.linkedin.com/in/luc-nizet-83135ba/",
         "sameAs": ["https://www.linkedin.com/in/luc-nizet-83135ba/"],
         "knowsAbout": ["Groundwater", "Soil", "Bodemsanering", "Grondwatersanering"]
@@ -142,13 +157,15 @@
         </div>
       </section>
 
-      <!-- Focus strip: desktop: 3 kolommen · mobile: carousel -->
-      <section class="intro-strip" aria-label="Bodem, grondwater en saneringsprojecten">
+      <!-- Focus strip: desktop kolommen · mobile marquee -->
+      <section class="intro-strip" aria-label="Expertise in het kort">
         <div class="container">
           <ul class="intro-strip-list" data-intro-carousel>
-            <li>Bodem</li>
-            <li>Grondwater</li>
-            <li>Saneringsprojecten</li>
+            <li>Milieuadvies</li>
+            <li>Verontreinigde terreinen</li>
+            <li>Bodemsanering</li>
+            <li>Grondwatersanering</li>
+            <li>Milieucompliance</li>
           </ul>
         </div>
       </section>
@@ -205,7 +222,7 @@
         <div class="container">
           <div class="section-head reveal">
             <p class="eyebrow">Expertise</p>
-            <h2 id="expertise-heading">Waar ik aan werk</h2>
+            <h2 id="expertise-heading">Op het terrein</h2>
             <p class="section-lead">
               Verontreinigde terreinen, grondwater en de coördinatie van
               saneringsprojecten. Duidelijke dossiers, van eerste inschatting tot
@@ -322,7 +339,7 @@
             </p>
           </div>
 
-          <div class="career-list reveal" data-career-list>
+          <div class="career-list" data-career-list>
             <article class="career-item is-open">
               <button
                 type="button"
@@ -496,54 +513,76 @@
       <!-- Contact -->
       <section class="section section-contact" id="contact" aria-labelledby="contact-heading">
         <div class="container">
-          <div class="contact-grid reveal">
-            <div class="contact-intro">
-              <p class="eyebrow light">Contact</p>
-              <h2 id="contact-heading">Zullen we spreken?</h2>
-              <p class="contact-lead">
-                Heb je een vraag over een saneringstraject, of wil je samenwerken
-                via Consulterra? Stuur gerust een bericht via LinkedIn. E-mail en
-                telefoon volgen hier zodra die publiek mogen.
-              </p>
-            </div>
+          <div class="contact-layout reveal">
+            <figure class="contact-portrait">
+              <img
+                src="images/LucNizet.jpg"
+                alt="Luc Nizet"
+                width="680"
+                height="1000"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
 
-            <dl class="contact-details">
-              <div class="contact-row">
-                <dt>Vennootschap</dt>
-                <dd>Consulterra BV</dd>
+            <div class="contact-main">
+              <div class="contact-intro">
+                <p class="eyebrow light">Contact</p>
+                <h2 id="contact-heading">Neem contact op</h2>
+                <p class="contact-lead">
+                  Vragen over een saneringstraject of een mogelijke samenwerking?
+                  Mail me. Ik antwoord zo snel ik kan. Je vindt me ook op LinkedIn.
+                </p>
               </div>
-              <div class="contact-row">
-                <dt>Adres</dt>
-                <dd>
-                  Garenstraat 65<br />
-                  3550 Heusden-Zolder<br />
-                  België
-                </dd>
+
+              <dl class="contact-details">
+                <div class="contact-row">
+                  <dt>Vennootschap</dt>
+                  <dd>Consulterra BV</dd>
+                </div>
+                <div class="contact-row">
+                  <dt>Adres</dt>
+                  <dd>
+                    Garenstraat 65<br />
+                    3550 Heusden-Zolder<br />
+                    België
+                  </dd>
+                </div>
+                <div class="contact-row">
+                  <dt>E-mail</dt>
+                  <dd>
+                    <a class="contact-mail" href="mailto:lucnizet@groupdecloedt.be"
+                      >lucnizet@groupdecloedt.be</a
+                    >
+                  </dd>
+                </div>
+                <div class="contact-row">
+                  <dt>LinkedIn</dt>
+                  <dd>
+                    <a
+                      class="link-linkedin"
+                      href="https://www.linkedin.com/in/luc-nizet-83135ba/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg class="icon-linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+                        <path
+                          fill="currentColor"
+                          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                        />
+                      </svg>
+                      <span>Luc Nizet</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              <div class="contact-actions">
+                <a class="btn btn-contact-primary" href="mailto:lucnizet@groupdecloedt.be">
+                  Mail Luc
+                </a>
               </div>
-              <div class="contact-row">
-                <dt>E-mail / tel.</dt>
-                <dd class="contact-placeholder">Nog via LinkedIn</dd>
-              </div>
-              <div class="contact-row">
-                <dt>LinkedIn</dt>
-                <dd>
-                  <a
-                    class="link-linkedin"
-                    href="https://www.linkedin.com/in/luc-nizet-83135ba/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <svg class="icon-linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
-                      <path
-                        fill="currentColor"
-                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                      />
-                    </svg>
-                    <span>Luc Nizet</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
+            </div>
           </div>
         </div>
       </section>
@@ -585,6 +624,9 @@
               <li>Garenstraat 65</li>
               <li>3550 Heusden-Zolder</li>
               <li>België</li>
+              <li>
+                <a href="mailto:lucnizet@groupdecloedt.be">lucnizet@groupdecloedt.be</a>
+              </li>
               <li>
                 <a
                   class="footer-linkedin"
