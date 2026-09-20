@@ -1,0 +1,182 @@
+========================================
+BRONGEGEVENS PROFIEL — LUC NIZET
+Te gebruiken als context bij het genereren van een portfoliowebsite
+========================================
+
+Bronnen:
+  [B1] LinkedIn-profiel — https://www.linkedin.com/in/luc-nizet-83135ba/
+  [B2] Netwerk De Vlaamse Waterweg, teampagina —
+       https://www.netwerkdevlaamsewaterweg.be/nl/team
+Geëxtraheerd op: 20 september 2026
+
+WAARSCHUWING: het is niet zeker dat beide bronnen over dezelfde persoon
+gaan. Zie sectie 1b vóór het samenvoegen. Presenteer ze niet als één
+biografie zolang dit niet bevestigd is.
+
+----------------------------------------
+1. IDENTITEIT  [B1]
+----------------------------------------
+Volledige naam:   Luc Nizet
+Huidige headline: Bestuurder bij Consulterra BV
+Locatie:          Regio Antwerpen, België (LinkedIn-profiel)
+                  Let op: vestiging Consulterra BV is Heusden-Zolder (Limburg).
+                  Op de site gebruiken we de vestiging, niet de LinkedIn-regio.
+Bedrijf:          Consulterra BV
+Opleidingsinst.:  KU Leuven (Katholieke Universiteit Leuven)
+Netwerkomvang:    500+ connecties, 708 volgers
+LinkedIn-URL:     https://www.linkedin.com/in/luc-nizet-83135ba/
+
+Opmerking: de headline vermeldt "Bestuurder", de ervaringssectie
+vermeldt "Zaakvoerder". Beide duiden op eigenaar/leidinggevende van de
+vennootschap. Vraag aan Luc welke titel hij op de site wil.
+
+----------------------------------------
+1b. TWEEDE BRON — MOGELIJK IDENTITEITSCONFLICT  [B2]
+----------------------------------------
+Netwerk De Vlaamse Waterweg (netwerkorganisatie rond de Vlaamse
+waterwegen) vermeldt op haar teampagina:
+
+    Naam:   Luc Nizet
+    Functie: Voorzitter Werkgroep Infrastructuur & Onderhoud & Jaagpaden
+    E-mail: lucnizet@groupdecloedt.be
+
+CONFLICT: het e-maildomein verwijst naar Group De Cloedt, niet naar
+Consulterra BV. "Luc Nizet" is in België geen zeldzame naam. Er zijn
+drie mogelijkheden, en op basis van de beschikbare gegevens is er geen
+onderscheid te maken:
+
+  (a) Dezelfde persoon — hij bekleedt de netwerkfunctie via een
+      afzonderlijke band met Group De Cloedt, naast of in plaats van
+      Consulterra.
+  (b) Dezelfde persoon — zijn LinkedIn is verouderd en hij is
+      overgestapt naar Group De Cloedt.
+  (c) Een andere Luc Nizet.
+
+ACTIE VEREIST: rechtstreeks bij Luc navragen wat van toepassing is.
+Behandel [B1] en [B2] tot dan als afzonderlijke records. Genereer geen
+biografie die de bodemsaneringsloopbaan combineert met het
+voorzitterschap rond de waterwegen.
+
+----------------------------------------
+2. PROFESSIONELE SAMENVATTING
+    (afgeleid — NIET letterlijk van LinkedIn)
+----------------------------------------
+Milieudeskundige met meer dan 25 jaar ervaring in bodem- en
+grondwatersanering in België. Loopbaan van projectingenieur naar
+projectleider naar coördinator saneringsprojecten, en sinds 2012
+zaakvoerder van het eigen adviesbureau Consulterra BV. Kerndomein:
+verontreinigde terreinen, bodemsaneringsprojecten, grondwater.
+
+(Deze alinea is een interpretatie voor websitetekst, geen citaat uit
+het profiel. Laat Luc dit goedkeuren of herschrijven.)
+
+----------------------------------------
+3. WERKERVARING (omgekeerd chronologisch)  [B1]
+----------------------------------------
+
+[1] Zaakvoerder
+    Bedrijf:  Consulterra BV
+    Periode:  april 2012 – heden (14 jaar 6 maanden)
+    Adres:    Garenstraat 65, 3550 Heusden-Zolder
+
+[2] Project Manager
+    Bedrijf:  DC Industrial NV (Group Decloedt)
+    Periode:  2015 – heden
+    Opm.:     Lopende opdracht op freelancebasis via Consulterra BV.
+              (Bevestigd door opdrachtgever/site-eigenaar, sept. 2026)
+
+[3] Coördinator saneringsprojecten
+    Bedrijf:  Bioterra NV
+    Periode:  mei 2007 – april 2012 (5 jaar)
+
+[4] Projectleider saneringen
+    Bedrijf:  Bosatec NV
+    Periode:  juni 2003 – mei 2007 (4 jaar)
+
+[5] Project-ingenieur saneringen
+    Bedrijf:  DEC NV
+    Periode:  1999 – 2003
+
+----------------------------------------
+4. NEVENFUNCTIE  [B2 — onder voorbehoud, zie 1b]
+----------------------------------------
+Voorzitter Werkgroep Infrastructuur & Onderhoud & Jaagpaden
+Organisatie: Netwerk De Vlaamse Waterweg
+Periode: onbekend
+Contact via: lucnizet@groupdecloedt.be
+
+----------------------------------------
+5. OPLEIDING  [B1]
+----------------------------------------
+KU Leuven
+Studierichting: Industriële microbiologie
+Periode: 1993 – 1998
+
+----------------------------------------
+6. VAARDIGHEDEN  [B1]
+----------------------------------------
+LinkedIn vermeldt 17 vaardigheden in totaal. Slechts de bovenste twee
+zijn beschikbaar:
+
+- Groundwater (grondwater)  — 6 aanbevelingen
+- Soil (bodem)              — 8 aanbevelingen
+
+De overige 15 ontbreken in dit extract — zie sectie 9.
+
+----------------------------------------
+7. TALEN  [B1]
+----------------------------------------
+LinkedIn vermeldt 3 talen. Slechts twee zijn beschikbaar:
+
+- Nederlands — moedertaal of tweetalig niveau
+- Engels     — professionele werkvaardigheid
+- [derde taal niet beschikbaar — vermoedelijk Frans gezien de Belgische
+   context; verifiëren vóór publicatie]
+
+----------------------------------------
+8. TIJDLIJN LOOPBAAN (voor een visuele tijdlijncomponent)
+----------------------------------------
+1993 — Start studie KU Leuven
+1998 — Afgestudeerd, Industriële microbiologie
+1999 — Project-ingenieur saneringen @ DEC NV
+2003 — Projectleider saneringen @ Bosatec NV
+2007 — Coördinator saneringsprojecten @ Bioterra NV
+2012 — Start als zaakvoerder van Consulterra BV
+2015 — Project Manager @ DC Industrial NV / Group Decloedt (via Consulterra, lopend)
+2026 — Nog steeds aan het hoofd van Consulterra BV
+
+----------------------------------------
+9. ONTBREKENDE INFORMATIE — VÓÓR DE BOUW TE VERZAMELEN
+----------------------------------------
+Het volgende zit NIET in dit extract en moet rechtstreeks bij Luc
+opgevraagd worden, niet verzonnen worden door de generator:
+
+- Profielfoto / professionele portretfoto
+- "Over mij"-tekst in zijn eigen woorden
+- Zakelijke e-mail, telefoon, bedrijfswebsite, btw-nummer Consulterra
+- De overige 15 vaardigheden
+- De derde taal
+- Certificaten (bv. erkenning als bodemsaneringsdeskundige, indien van
+  toepassing)
+- Referentieprojecten, klanten of cases
+- Dienstenaanbod van Consulterra BV
+- Aanbevelingen of getuigenissen
+- Publicaties, lidmaatschappen, spreekbeurten
+- Ophelderen van het conflict in sectie 1b
+
+----------------------------------------
+10. INSTRUCTIES VOOR DE SITEGENERATOR
+----------------------------------------
+- Verzin GEEN biografische feiten, projectnamen, klantnamen,
+  certificaten of citaten. Zet bij ontbrekende inhoud een duidelijke
+  placeholder, bv. [PLACEHOLDER: over-mij-tekst].
+- Voeg [B1] en [B2] niet samen tot één verhaal zolang sectie 1b niet
+  opgelost is.
+- Hoofdtaal van de site: Nederlands (Belgische markt). Overweeg een
+  EN-schakelaar, aangezien Engels op professioneel niveau vermeld staat.
+- Toon: professioneel, technisch, sober. Dit is een B2B-milieuadvies-
+  bureau, geen creatief bureau.
+- Publiceer geen persoonlijke contactgegevens op de publieke site zonder
+  uitdrukkelijke toestemming van Luc. Dit geldt in het bijzonder voor het
+  e-mailadres uit [B2]: dat staat op de site van een andere organisatie
+  en is niet automatisch bedoeld voor hergebruik op zijn portfolio.
