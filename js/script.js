@@ -376,3 +376,18 @@ function initCookies() {
     window.setTimeout(showBanner, 600);
   }
 }
+
+initImageGuard();
+
+function initImageGuard() {
+  const block = (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    if (target.closest('img')) {
+      event.preventDefault();
+    }
+  };
+
+  document.addEventListener('contextmenu', block, { capture: true });
+  document.addEventListener('dragstart', block, { capture: true });
+}
