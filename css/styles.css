@@ -892,6 +892,25 @@ h2 {
   background: linear-gradient(145deg, #263848 0%, #101820 100%);
 }
 
+.media-photo {
+  margin: 0;
+  padding: 0;
+  display: block;
+  background: var(--navy-mid);
+}
+
+.media-photo::after {
+  display: none;
+}
+
+.media-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 /* Expertise — felle teal */
 
 .section-expertise {
@@ -1466,46 +1485,11 @@ h2 {
   color: color-mix(in srgb, #b6f0e0 88%, transparent);
 }
 
-.contact-layout {
-  display: grid;
-  gap: 2.75rem;
-  align-items: start;
-}
-
-@media (min-width: 860px) {
-  .contact-layout {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
-    gap: 4.5rem 5rem;
-    align-items: center;
-  }
-}
-
-.contact-portrait {
-  margin: 0;
-  overflow: hidden;
-  border-radius: 2px;
-  background: color-mix(in srgb, var(--white) 8%, transparent);
-  aspect-ratio: 4 / 5;
-  max-width: 22rem;
-}
-
-@media (min-width: 860px) {
-  .contact-portrait {
-    max-width: none;
-  }
-}
-
-.contact-portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 12%;
-}
-
 .contact-main {
   display: grid;
   gap: 2.5rem;
   min-width: 0;
+  max-width: 40rem;
 }
 
 .section-contact h2 {
