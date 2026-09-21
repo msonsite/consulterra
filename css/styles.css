@@ -21,7 +21,8 @@
   --font-body: "IBM Plex Sans", system-ui, sans-serif;
 
   --header-h: 5.25rem;
-  --max: 72rem;
+  --gutter: 1.25rem;
+  --max: 81.25rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -62,7 +63,8 @@ body {
   margin: 0;
   font-family: var(--font-body);
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.7;
+  letter-spacing: -0.011em;
   color: var(--ink);
   background: var(--bg);
   overflow-x: hidden;
@@ -139,7 +141,7 @@ main {
 
 @media (min-width: 768px) {
   .container {
-    width: min(100% - 4rem, var(--max));
+    width: min(100% - (var(--gutter) * 2), var(--max));
   }
 }
 
@@ -192,7 +194,7 @@ main {
 
 @media (min-width: 768px) {
   .header-inner {
-    width: min(100% - 4rem, var(--max));
+    width: min(100% - (var(--gutter) * 2), var(--max));
     gap: 1rem;
   }
 }
@@ -486,14 +488,14 @@ main {
   .hero-title {
     font-size: clamp(3.15rem, 14vw, 4.15rem);
     letter-spacing: -0.04em;
-    line-height: 0.94;
+    line-height: 0.96;
   }
 
   .hero-lead {
-    margin-top: 1.15rem;
-    max-width: 22rem;
-    font-size: 1.175rem;
-    line-height: 1.48;
+    margin-top: 1.2rem;
+    max-width: 21rem;
+    font-size: 1.15rem;
+    line-height: 1.58;
   }
 
   .hero-actions {
@@ -509,8 +511,8 @@ main {
 
 @media (min-width: 768px) {
   .hero-content {
-    width: min(100% - 4rem, var(--max));
-    margin-left: max(2rem, calc((100% - var(--max)) / 2));
+    width: min(100% - (var(--gutter) * 2), var(--max));
+    margin-left: max(var(--gutter), calc((100% - var(--max)) / 2));
     margin-right: auto;
     padding-bottom: 5.5rem;
     max-width: 44rem;
@@ -526,7 +528,7 @@ main {
     display: block;
     position: absolute;
     z-index: 1;
-    right: max(2rem, calc((100% - var(--max)) / 2));
+    right: max(var(--gutter), calc((100% - var(--max)) / 2));
     bottom: 0;
     height: min(82vh, 45rem);
     width: auto;
@@ -544,7 +546,7 @@ main {
     object-fit: contain;
     object-position: bottom right;
     margin-left: auto;
-    filter: drop-shadow(0 18px 40px rgba(11, 26, 34, 0.4));
+    filter: drop-shadow(0 14px 32px rgba(11, 26, 34, 0.34));
   }
 
   .hero-content {
@@ -588,10 +590,11 @@ main {
   font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(2.6rem, 12vw, 6rem);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
+  line-height: 0.96;
+  letter-spacing: -0.035em;
   max-width: 100%;
   overflow-wrap: anywhere;
+  text-wrap: balance;
   color: var(--white);
   text-shadow:
     0 2px 24px rgba(11, 26, 34, 0.55),
@@ -599,11 +602,12 @@ main {
 }
 
 .hero-lead {
-  margin: 1.35rem 0 0;
-  max-width: 30rem;
-  font-size: clamp(1.08rem, 2.1vw, 1.28rem);
+  margin: 1.4rem 0 0;
+  max-width: 28rem;
+  font-size: clamp(1.08rem, 2.1vw, 1.25rem);
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.62;
+  letter-spacing: -0.012em;
   color: color-mix(in srgb, var(--white) 94%, transparent);
   text-shadow: 0 1px 12px rgba(11, 26, 34, 0.5);
 }
@@ -837,21 +841,24 @@ h2 {
   font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(2rem, 4.5vw, 3rem);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  line-height: 1.16;
+  letter-spacing: -0.028em;
+  text-wrap: balance;
 }
 
 .lede,
 .section-lead {
-  margin: 1.25rem 0 0;
-  font-size: 1.125rem;
+  margin: 1.35rem 0 0;
+  font-size: 1.1rem;
+  line-height: 1.72;
+  letter-spacing: -0.01em;
   color: var(--muted);
-  max-width: 36rem;
+  max-width: 32rem;
 }
 
 .section-head {
-  max-width: 38rem;
-  margin-bottom: 2.75rem;
+  max-width: 34rem;
+  margin-bottom: 3rem;
 }
 
 .count-up {
@@ -883,6 +890,10 @@ h2 {
 
 .section-about .eyebrow {
   color: color-mix(in srgb, var(--accent) 70%, var(--sand));
+}
+
+.section-about h2 {
+  max-width: 11.5em;
 }
 
 .about-layout {
@@ -1133,6 +1144,8 @@ h2 {
   margin: 0;
   color: color-mix(in srgb, var(--white) 72%, transparent);
   font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 28rem;
 }
 
 .section-expertise .media-ph-soil {
@@ -1301,11 +1314,13 @@ h2 {
 .project-shot-title,
 .project-card-copy h2 {
   margin: 0;
-  max-width: 16em;
+  max-width: 12.5em;
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 3vw, 2.35rem);
   font-weight: 400;
-  line-height: 1.08;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
   color: var(--white);
 }
 
@@ -1325,9 +1340,9 @@ h2 {
   margin: 0;
   padding: 0;
   border: 0;
-  background: rgba(11, 26, 34, 0.46);
+  background: rgba(11, 26, 34, 0.52);
   opacity: 0;
-  transition: opacity 0.55s var(--ease);
+  transition: opacity 0.62s var(--ease);
   cursor: pointer;
 }
 
@@ -1349,7 +1364,7 @@ h2 {
 }
 
 .project-lightbox.is-open .project-card {
-  box-shadow: 0 28px 80px rgba(11, 26, 34, 0.34);
+  box-shadow: 0 32px 90px rgba(11, 26, 34, 0.38);
 }
 
 .project-card-hero {
@@ -1370,21 +1385,25 @@ h2 {
   flex: 1 1 auto;
   min-height: 0;
   overflow: auto;
-  padding: 1.35rem 1.45rem 1.7rem;
+  padding: 1.45rem 1.55rem 1.85rem;
   opacity: 0;
-  transition: opacity 0.28s ease;
+  transform: translateY(0.7rem);
+  transition: opacity 0.42s var(--ease), transform 0.42s var(--ease);
 }
 
 .project-lightbox.is-open .project-card-body {
   opacity: 1;
-  transition-delay: 0.18s;
+  transform: none;
+  transition-delay: 0.2s;
 }
 
 .project-card-detail {
   margin: 0;
   color: var(--ink);
   font-size: 1.02rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  max-width: 34rem;
 }
 
 .project-card-detail:empty {
@@ -1408,12 +1427,14 @@ h2 {
   color: var(--navy);
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.2s ease, background 0.2s ease;
+  transform: scale(0.92);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), background 0.2s ease;
 }
 
 .project-lightbox.is-open .project-card-close {
   opacity: 1;
-  transition-delay: 0.2s;
+  transform: none;
+  transition-delay: 0.24s;
 }
 
 .project-card-close:hover,
@@ -1473,21 +1494,25 @@ h2 {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 2.4vw, 1.5rem);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.22;
+  letter-spacing: -0.018em;
+  text-wrap: balance;
   overflow-wrap: anywhere;
 }
 
 .career-copy .org {
-  margin: 0.15rem 0 0;
+  margin: 0.2rem 0 0;
   font-weight: 600;
   font-size: 0.98rem;
+  letter-spacing: -0.01em;
 }
 
 .career-note {
-  margin: 0.35rem 0 0;
+  margin: 0.4rem 0 0;
   color: var(--muted);
   font-size: 0.95rem;
-  max-width: 38rem;
+  line-height: 1.65;
+  max-width: 34rem;
 }
 
 .career-logo-box {
@@ -1498,8 +1523,10 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
+  box-sizing: border-box;
+  width: 4.25rem;
+  height: 4.25rem;
+  padding: 0.3rem;
 }
 
 .career-logo {
@@ -1508,13 +1535,6 @@ h2 {
   height: 100%;
   object-fit: contain;
   object-position: center;
-}
-
-.career-mark {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  line-height: 1;
-  color: var(--accent);
 }
 
 .career-aside {
@@ -1534,7 +1554,7 @@ h2 {
 
 @media (min-width: 800px) {
   .career-row {
-    grid-template-columns: 13.5rem minmax(0, 1fr) 4.5rem;
+    grid-template-columns: 13.5rem minmax(0, 1fr) 5.5rem;
     grid-template-areas: 'time copy logo';
     gap: 1.5rem;
     padding: 1.4rem 0;
@@ -1545,8 +1565,9 @@ h2 {
   }
 
   .career-logo-box {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    padding: 0.4rem;
   }
 
   .career-row--aside {
@@ -1654,11 +1675,12 @@ h2 {
 }
 
 .contact-lead {
-  margin: 1.25rem 0 0;
+  margin: 1.35rem 0 0;
   color: color-mix(in srgb, var(--white) 78%, transparent);
-  max-width: 34rem;
-  font-size: 1.125rem;
-  line-height: 1.7;
+  max-width: 32rem;
+  font-size: 1.1rem;
+  line-height: 1.72;
+  letter-spacing: -0.01em;
 }
 
 .contact-details {

@@ -167,7 +167,7 @@ function initProjectMotion() {
   const detailEl = card.querySelector('[data-project-detail]');
   const closeBtn = card.querySelector('.project-card-close');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const ease = 'cubic-bezier(0.32, 0.72, 0, 1)';
+  const ease = 'cubic-bezier(0.16, 1, 0.3, 1)';
 
   let source = null;
   let closing = false;
@@ -193,7 +193,7 @@ function initProjectMotion() {
 
   function place(box, mediaHeight, animate) {
     const motion = animate && !reduce.matches;
-    const timing = `0.55s ${ease}`;
+    const timing = `0.62s ${ease}`;
     card.style.transition = motion
       ? `left ${timing}, top ${timing}, width ${timing}, height ${timing}, box-shadow ${timing}`
       : 'none';
@@ -223,7 +223,7 @@ function initProjectMotion() {
       finish();
     };
     card.addEventListener('transitionend', onEnd);
-    window.setTimeout(finish, 800);
+    window.setTimeout(finish, 850);
   }
 
   function open(button) {
