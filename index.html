@@ -19,7 +19,7 @@
       content="Via Consulterra. Expertise in bodem, water en milieuprojecten."
     />
     <meta property="og:locale" content="nl_BE" />
-    <meta property="og:image" content="images/banner.jpg" />
+    <meta property="og:image" content="images/hero/banner.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://consulterra.be/" />
     <link rel="icon" href="favicon_io/favicon.ico" sizes="any" />
@@ -64,7 +64,7 @@
           }
         },
         "alumniOf": { "@type": "CollegeOrUniversity", "name": "KU Leuven" },
-        "image": "images/LucNizet.jpg",
+        "image": "images/portraits/LucNizet.jpg",
         "email": "lucnizet@groupdecloedt.be",
         "url": "https://www.linkedin.com/in/luc-nizet-83135ba/",
         "sameAs": ["https://www.linkedin.com/in/luc-nizet-83135ba/"],
@@ -80,7 +80,7 @@
         <button type="button" class="brand" data-scroll="top" aria-label="Consulterra, naar boven">
           <img
             class="brand-logo"
-            src="images/consulterralogo.png"
+            src="images/brand/consulterralogo.png"
             alt=""
             width="160"
             height="40"
@@ -121,7 +121,7 @@
       <section class="hero" id="top" aria-labelledby="hero-heading">
         <div class="hero-media" aria-hidden="true">
           <img
-            src="images/banner.jpg"
+            src="images/hero/banner.jpg"
             alt=""
             width="2400"
             height="1350"
@@ -133,7 +133,7 @@
 
         <figure class="hero-portrait reveal">
           <img
-            src="images/LucNizet-Photoroom.png"
+            src="images/portraits/LucNizet-Photoroom.png"
             alt="Luc Nizet"
             width="340"
             height="500"
@@ -144,7 +144,7 @@
         <div class="hero-content">
           <img
             class="hero-brand-logo reveal"
-            src="images/consulterralogo.png"
+            src="images/brand/consulterralogo.png"
             alt="Consulterra BV"
             width="200"
             height="50"
@@ -183,7 +183,7 @@
         <div class="container about-layout">
           <figure class="about-portrait reveal">
             <img
-              src="images/LucNizet.jpg"
+              src="images/portraits/LucNizet.jpg"
               alt="Profielfoto van Luc Nizet"
               width="680"
               height="1000"
@@ -314,7 +314,7 @@
         </div>
       </section>
 
-      <!-- Projecten / cases placeholders -->
+      <!-- Projecten -->
       <section class="section section-projects" id="projecten" aria-labelledby="projects-heading">
         <div class="container">
           <div class="section-head reveal">
@@ -326,219 +326,151 @@
             </p>
           </div>
 
-          <div class="projects-rail" data-h-scroll>
+          <div class="projects-stack">
             <article class="project-slide project-slide--feature reveal">
-              <figure class="media-ph media-ph-wide media-photo">
+              <button type="button" class="project-shot" data-project-shot aria-labelledby="project-gdansk">
                 <img
                   src="images/stock/project-gdansk.jpg"
-                  alt="Breakwaterwerken in de Noordelijke Haven van Gdansk"
+                  alt=""
                   width="2016"
                   height="1512"
                   loading="lazy"
                   decoding="async"
                 />
-              </figure>
-              <div class="projects-feature-copy">
-                <p class="eyebrow">Aggregaten · Baggerwerken</p>
-                <h3>Breakwater Gdansk</h3>
-                <p>
-                  Levering en plaatsing van 650.000 m³ zand-grindmengsel als
-                  fundering voor de nieuwe beschermende breakwater in de
-                  Noordelijke Haven. Juli 2019 tot maart 2021, met DC Orisant
-                  en Rio.
-                </p>
+              </button>
+              <div class="project-shot-shade" aria-hidden="true"></div>
+              <div class="project-shot-copy">
+                <p class="project-shot-kicker">Aggregaten · Baggerwerken</p>
+                <h3 id="project-gdansk" class="project-shot-title">Breakwater Gdansk</h3>
               </div>
+              <p class="project-detail" hidden>
+                Levering en plaatsing van 650.000 m³ zand-grindmengsel als
+                fundering voor de nieuwe beschermende breakwater in de
+                Noordelijke Haven. Juli 2019 tot maart 2021, met DC Orisant
+                en Rio.
+              </p>
             </article>
 
             <article class="project-slide reveal">
-              <figure class="media-ph media-ph-project media-photo">
+              <button type="button" class="project-shot" data-project-shot aria-labelledby="project-thyboron">
                 <img
                   src="images/stock/limfjordskaj.jpg"
-                  alt="Steenopslag en kadewerken in Thyborøn, Denemarken"
+                  alt=""
                   width="3038"
                   height="2279"
                   loading="lazy"
                   decoding="async"
                 />
-              </figure>
-              <h3>Windpark Noordzee via Thyborøn</h3>
-              <p>Aggregaten · ca. 68.000 ton armour stone · 2023</p>
+              </button>
+              <div class="project-shot-shade" aria-hidden="true"></div>
+              <div class="project-shot-copy">
+                <h3 id="project-thyboron" class="project-shot-title">Windpark Noordzee via Thyborøn</h3>
+              </div>
+              <p class="project-detail" hidden>Aggregaten · ca. 68.000 ton armour stone · 2023</p>
             </article>
 
             <article class="project-slide reveal">
-              <figure class="media-ph media-ph-project alt media-photo">
+              <button type="button" class="project-shot" data-project-shot aria-labelledby="project-emsa">
                 <img
                   src="images/stock/emsa.jpg"
-                  alt="EMSA-olierampbestrijding met baggerschip op zee"
+                  alt=""
                   width="4424"
                   height="2489"
                   loading="lazy"
                   decoding="async"
                 />
-              </figure>
-              <h3>EMSA oil spill recovery</h3>
-              <p>Milieu · standby olierampbestrijding Noordzee · sinds 2008</p>
+              </button>
+              <div class="project-shot-shade" aria-hidden="true"></div>
+              <div class="project-shot-copy">
+                <h3 id="project-emsa" class="project-shot-title">EMSA oil spill recovery</h3>
+              </div>
+              <p class="project-detail" hidden>Milieu · standby olierampbestrijding Noordzee · sinds 2008</p>
             </article>
           </div>
-          <p class="h-scroll-hint" data-h-scroll-hint hidden>Veeg voor meer</p>
         </div>
       </section>
 
-      <!-- Loopbaan: compacte accordion -->
+      <!-- Loopbaan -->
       <section class="section section-career" id="loopbaan" aria-labelledby="career-heading">
         <div class="container">
           <div class="section-head reveal">
             <p class="eyebrow">Loopbaan</p>
-            <h2 id="career-heading">Het pad tot hier</h2>
+            <h2 id="career-heading" aria-label="25+ jaar ervaring">
+              <span class="count-up" data-count="25">0</span>+ jaar ervaring
+            </h2>
             <p class="section-lead">
               Van Projectingenieur tot zelfstandig adviseur. Via Consulterra
               vooral in opdracht van Group De Cloedt.
             </p>
           </div>
 
-          <div class="career-list" data-career-list>
-            <article class="career-item is-open">
-              <button
-                type="button"
-                class="career-item-trigger"
-                aria-expanded="true"
-                id="career-trigger-0"
-                aria-controls="career-panel-0"
-              >
-                <time datetime="2012">2012 tot heden</time>
-                <div class="org-row">
-                  <div class="org-logo-slot">
-                    <img class="org-logo" src="favicon_io/android-chrome-512x512.png" alt="" width="80" height="80" loading="lazy" />
-                  </div>
-                  <div class="org-copy">
-                    <h3>Zaakvoerder</h3>
-                    <p class="org">Consulterra BV</p>
-                  </div>
-                </div>
-                <span class="career-item-chevron" aria-hidden="true"></span>
-              </button>
-              <div class="career-item-panel" id="career-panel-0" role="region" aria-labelledby="career-trigger-0">
-                <p>
-                  Eigen vennootschap sinds april 2012. Vanuit Consulterra werkt Luc
-                  als adviseur op tenders en projecten.
-                </p>
+          <ol class="career-list">
+            <li class="career-row reveal">
+              <time datetime="2012">2012 tot heden</time>
+              <div class="career-copy">
+                <h3>Zaakvoerder</h3>
+                <p class="org">Consulterra BV</p>
+                <p class="career-note">Adviseur op tenders en projecten.</p>
               </div>
-            </article>
+              <span class="career-logo-box">
+                <img class="career-logo" src="favicon_io/android-chrome-512x512.png" alt="" width="80" height="80" loading="lazy" />
+              </span>
+            </li>
 
-            <article class="career-item">
-              <button
-                type="button"
-                class="career-item-trigger"
-                aria-expanded="false"
-                id="career-trigger-1"
-                aria-controls="career-panel-1"
-              >
-                <time datetime="2015">2015 tot heden</time>
-                <div class="org-row">
-                  <div class="org-logo-slot">
-                    <img class="org-logo" src="images/groupdecloedt.png" alt="" width="80" height="80" loading="lazy" />
-                  </div>
-                  <div class="org-copy">
-                    <h3>Tender Manager</h3>
-                    <p class="org">DC Industrial NV · Group De Cloedt</p>
-                  </div>
-                </div>
-                <span class="career-item-chevron" aria-hidden="true"></span>
-              </button>
-              <div class="career-item-panel" id="career-panel-1" role="region" aria-labelledby="career-trigger-1" hidden>
-                <p>
-                  Lopende opdracht als Tender Manager via Consulterra. Ook lid van
-                  het Sustainability Committee van Group De Cloedt.
-                </p>
+            <li class="career-row reveal">
+              <time datetime="2015">2015 tot heden</time>
+              <div class="career-copy">
+                <h3>Tender Manager</h3>
+                <p class="org">DC Industrial NV · Group De Cloedt</p>
+                <p class="career-note">Via Consulterra. Lid van het Sustainability Committee.</p>
               </div>
-            </article>
+              <span class="career-logo-box">
+                <img class="career-logo" src="images/logos/groupdecloedt.png" alt="" width="80" height="80" loading="lazy" />
+              </span>
+            </li>
 
-            <article class="career-item">
-              <button
-                type="button"
-                class="career-item-trigger"
-                aria-expanded="false"
-                id="career-trigger-2"
-                aria-controls="career-panel-2"
-              >
-                <time datetime="2007">2007 tot 2012</time>
-                <div class="org-row">
-                  <div class="org-logo-slot">
-                    <img class="org-logo" src="images/bioterra.png" alt="" width="80" height="80" loading="lazy" />
-                  </div>
-                  <div class="org-copy">
-                    <h3>Coördinator Saneringsprojecten</h3>
-                    <p class="org">Bioterra NV</p>
-                  </div>
-                </div>
-                <span class="career-item-chevron" aria-hidden="true"></span>
-              </button>
-              <div class="career-item-panel" id="career-panel-2" role="region" aria-labelledby="career-trigger-2" hidden>
-                <p>Coördinatie van saneringsprojecten, mei 2007 tot april 2012.</p>
+            <li class="career-row reveal">
+              <time datetime="2007">2007 tot 2012</time>
+              <div class="career-copy">
+                <h3>Coördinator Saneringsprojecten</h3>
+                <p class="org">Bioterra NV</p>
               </div>
-            </article>
+              <span class="career-logo-box">
+                <img class="career-logo" src="images/logos/bioterra.png" alt="" width="80" height="80" loading="lazy" />
+              </span>
+            </li>
 
-            <article class="career-item">
-              <button
-                type="button"
-                class="career-item-trigger"
-                aria-expanded="false"
-                id="career-trigger-3"
-                aria-controls="career-panel-3"
-              >
-                <time datetime="2003">2003 tot 2007</time>
-                <div class="org-row">
-                  <div class="org-logo-slot" aria-hidden="true">
-                    <span class="org-logo-ph">B</span>
-                  </div>
-                  <div class="org-copy">
-                    <h3>Projectleider Saneringen</h3>
-                    <p class="org">Bosatec NV</p>
-                  </div>
-                </div>
-                <span class="career-item-chevron" aria-hidden="true"></span>
-              </button>
-              <div class="career-item-panel" id="career-panel-3" role="region" aria-labelledby="career-trigger-3" hidden>
-                <p>Projectleiding van saneringen, juni 2003 tot mei 2007.</p>
+            <li class="career-row reveal">
+              <time datetime="2003">2003 tot 2007</time>
+              <div class="career-copy">
+                <h3>Projectleider Saneringen</h3>
+                <p class="org">Bosatec NV</p>
               </div>
-            </article>
+              <span class="career-logo-box" aria-hidden="true"><span class="career-mark">B</span></span>
+            </li>
 
-            <article class="career-item">
-              <button
-                type="button"
-                class="career-item-trigger"
-                aria-expanded="false"
-                id="career-trigger-4"
-                aria-controls="career-panel-4"
-              >
-                <time datetime="1999">1999 tot 2003</time>
-                <div class="org-row">
-                  <div class="org-logo-slot" aria-hidden="true">
-                    <span class="org-logo-ph">D</span>
-                  </div>
-                  <div class="org-copy">
-                    <h3>Projectingenieur Saneringen</h3>
-                    <p class="org">DEC NV</p>
-                  </div>
-                </div>
-                <span class="career-item-chevron" aria-hidden="true"></span>
-              </button>
-              <div class="career-item-panel" id="career-panel-4" role="region" aria-labelledby="career-trigger-4" hidden>
-                <p>Eerste jaren als Projectingenieur Saneringen, 1999 tot 2003.</p>
+            <li class="career-row reveal">
+              <time datetime="1999">1999 tot 2003</time>
+              <div class="career-copy">
+                <h3>Projectingenieur Saneringen</h3>
+                <p class="org">DEC NV · DEME</p>
               </div>
-            </article>
-          </div>
+              <span class="career-logo-box">
+                <img class="career-logo" src="images/logos/deme.svg" alt="" width="120" height="32" loading="lazy" />
+              </span>
+            </li>
+          </ol>
 
-          <aside class="career-engagement reveal" aria-labelledby="engagement-heading">
+          <aside class="career-aside reveal" aria-labelledby="engagement-heading">
             <p class="eyebrow">Nevenfunctie</p>
-            <div class="org-row">
-              <div class="org-logo-slot">
-                <img class="org-logo" src="images/devlaamsewaterweg.png" alt="" width="80" height="80" loading="lazy" />
-              </div>
-              <div class="org-copy">
+            <div class="career-row career-row--aside">
+              <div class="career-copy">
                 <h3 id="engagement-heading">Voorzitter Werkgroep Infrastructuur &amp; Onderhoud &amp; Jaagpaden</h3>
                 <p class="org">Netwerk De Vlaamse Waterweg</p>
               </div>
+              <span class="career-logo-box">
+                <img class="career-logo" src="images/logos/devlaamsewaterweg.png" alt="" width="240" height="80" loading="lazy" />
+              </span>
             </div>
           </aside>
         </div>
@@ -547,37 +479,25 @@
       <!-- Opleiding -->
       <section class="section section-edu" id="opleiding" aria-labelledby="edu-heading">
         <div class="container">
-          <div class="section-head reveal">
-            <p class="eyebrow">Opleiding</p>
-            <h2 id="edu-heading">De basis</h2>
-            <p class="section-lead">
-              Industriële microbiologie aan de KU Leuven. De wetenschappelijke
-              start van een loopbaan in bodem en milieu.
-            </p>
-          </div>
-
-          <article class="edu-feature reveal">
-            <div class="edu-feature-main">
-              <time datetime="1993">1993 tot 1998</time>
-              <div class="org-row">
-                <div class="org-logo-slot org-logo-slot--lg">
-                  <img
-                    class="org-logo"
-                    src="images/kuleuven.svg.webp"
-                    alt="KU Leuven"
-                    width="96"
-                    height="96"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="org-copy">
-                  <h3>Industriële microbiologie</h3>
-                  <p class="org">KU Leuven</p>
-                  <p class="edu-feature-detail">Katholieke Universiteit Leuven</p>
-                </div>
-              </div>
+          <div class="edu-layout reveal">
+            <div class="edu-copy">
+              <p class="eyebrow">Opleiding</p>
+              <h2 id="edu-heading">Industriële microbiologie</h2>
+              <p class="edu-meta">
+                <span>Katholieke Universiteit Leuven</span>
+                <time datetime="1993">1993 tot 1998</time>
+              </p>
             </div>
-          </article>
+            <img
+              class="edu-mark"
+              src="images/logos/kuleuven.svg.webp"
+              alt="KU Leuven"
+              width="640"
+              height="160"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
       </section>
 
@@ -641,13 +561,11 @@
                 <a class="btn btn-contact-primary" href="mailto:lucnizet@groupdecloedt.be">
                   Mail Luc
                 </a>
-                <!-- WhatsApp: vervang 32XXXXXXXXX door landcode + nummer, zonder + of spaties (bv. 32470123456) -->
                 <a
                   class="btn btn-contact-ghost btn-whatsapp"
-                  href="https://wa.me/32XXXXXXXXX"
+                  href="https://wa.me/32493772634"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="WhatsApp (nummer nog in te vullen)"
                 >
                   <svg class="icon-whatsapp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
                     <path
@@ -669,7 +587,7 @@
           <div class="footer-brand">
             <img
               class="footer-logo"
-              src="images/consulterralogo.png"
+              src="images/brand/consulterralogo.png"
               alt="Consulterra"
               width="200"
               height="50"
@@ -773,6 +691,28 @@
           <button type="button" class="btn btn-cookie" id="cookie-accept">Accepteren</button>
         </div>
       </div>
+    </div>
+
+    <div class="project-lightbox" data-project-lightbox hidden>
+      <button type="button" class="project-lightbox-backdrop" data-project-close aria-label="Sluiten"></button>
+      <article class="project-card" role="dialog" aria-modal="true" aria-labelledby="project-card-title">
+        <div class="project-card-hero">
+          <img alt="" />
+          <div class="project-card-shade" aria-hidden="true"></div>
+          <div class="project-card-copy">
+            <p class="project-card-kicker" data-project-kicker hidden></p>
+            <h2 id="project-card-title" data-project-title></h2>
+          </div>
+        </div>
+        <div class="project-card-body">
+          <p class="project-card-detail" data-project-detail></p>
+        </div>
+        <button type="button" class="project-card-close" data-project-close aria-label="Sluiten">
+          <svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14">
+            <path d="M3.2 3.2l9.6 9.6M12.8 3.2l-9.6 9.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
+        </button>
+      </article>
     </div>
 
     <script src="js/script.js" defer></script>

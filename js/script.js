@@ -150,8 +150,197 @@ initYear();
 initCookies();
 initHashScroll();
 initHScroll();
-initCareerList();
 initIntroCarousel();
+initCountUp();
+initProjectMotion();
+
+function initProjectMotion() {
+  const shots = document.querySelectorAll('[data-project-shot]');
+  const root = document.querySelector('[data-project-lightbox]');
+  if (!shots.length || !root) return;
+
+  const card = root.querySelector('.project-card');
+  const hero = card.querySelector('.project-card-hero');
+  const img = hero.querySelector('img');
+  const kicker = card.querySelector('[data-project-kicker]');
+  const titleEl = card.querySelector('[data-project-title]');
+  const detailEl = card.querySelector('[data-project-detail]');
+  const closeBtn = card.querySelector('.project-card-close');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const ease = 'cubic-bezier(0.32, 0.72, 0, 1)';
+
+  let source = null;
+  let closing = false;
+
+  function boxOf(el) {
+    const rect = el.getBoundingClientRect();
+    return { left: rect.left, top: rect.top, width: rect.width, height: rect.height };
+  }
+
+  function measureEnd() {
+    const pad = 16;
+    const width = Math.min(window.innerWidth - pad * 2, 760);
+    const height = window.innerHeight - pad * 2;
+    const media = Math.round(Math.min(height * 0.46, 440));
+    return {
+      left: (window.innerWidth - width) / 2,
+      top: pad,
+      width,
+      height,
+      media,
+    };
+  }
+
+  function place(box, mediaHeight, animate) {
+    const motion = animate && !reduce.matches;
+    const timing = `0.55s ${ease}`;
+    card.style.transition = motion
+      ? `left ${timing}, top ${timing}, width ${timing}, height ${timing}, box-shadow ${timing}`
+      : 'none';
+    hero.style.transition = motion ? `height ${timing}` : 'none';
+    card.style.visibility = 'visible';
+    card.style.left = `${box.left}px`;
+    card.style.top = `${box.top}px`;
+    card.style.width = `${box.width}px`;
+    card.style.height = `${box.height}px`;
+    hero.style.height = `${mediaHeight}px`;
+  }
+
+  function afterMove(done) {
+    if (reduce.matches || card.style.transition === 'none') {
+      done();
+      return;
+    }
+    let finished = false;
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      card.removeEventListener('transitionend', onEnd);
+      done();
+    };
+    const onEnd = (event) => {
+      if (event.target !== card || event.propertyName !== 'width') return;
+      finish();
+    };
+    card.addEventListener('transitionend', onEnd);
+    window.setTimeout(finish, 800);
+  }
+
+  function open(button) {
+    if (source || closing) return;
+    const sourceImg = button.querySelector('img');
+    const article = button.closest('article');
+    if (!sourceImg || !article) return;
+
+    const title = article.querySelector('h3')?.textContent.trim() || 'Project';
+    const kickerText = article.querySelector('.project-shot-kicker')?.textContent.trim() || '';
+    const detail = article.querySelector('.project-detail');
+
+    source = button;
+    img.src = sourceImg.currentSrc || sourceImg.src;
+    img.alt = sourceImg.alt || title;
+    titleEl.textContent = title;
+    detailEl.textContent = detail ? detail.textContent.trim() : '';
+    kicker.textContent = kickerText;
+    kicker.hidden = !kickerText;
+    root.hidden = false;
+
+    const origin = boxOf(article);
+    const end = measureEnd();
+    place(origin, origin.height, false);
+    article.classList.add('is-covered');
+    document.body.style.overflow = 'hidden';
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        root.classList.add('is-open');
+        place(end, end.media, true);
+        closeBtn.focus({ preventScroll: true });
+      });
+    });
+  }
+
+  function close() {
+    if (!source || closing) return;
+    closing = true;
+    const origin = source;
+    const article = origin.closest('article');
+    const back = boxOf(article);
+    place(back, back.height, true);
+    root.classList.remove('is-open');
+    afterMove(() => {
+      article.classList.remove('is-covered');
+      root.hidden = true;
+      document.body.style.overflow = '';
+      origin.focus({ preventScroll: true });
+      source = null;
+      closing = false;
+    });
+  }
+
+  shots.forEach((button) => {
+    button.addEventListener('click', () => open(button));
+  });
+
+  root.addEventListener('click', (event) => {
+    if (event.target.closest('[data-project-close]')) close();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && source) close();
+  });
+}
+
+function initCountUp() {
+  const nodes = document.querySelectorAll('[data-count]');
+  if (!nodes.length) return;
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  nodes.forEach((node) => {
+    const target = Number(node.getAttribute('data-count'));
+    if (!Number.isFinite(target)) return;
+
+    if (reduce || !('IntersectionObserver' in window)) {
+      node.textContent = String(target);
+      return;
+    }
+
+    node.textContent = '0';
+
+    const section = node.closest('section') || node;
+    let started = false;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting || started) return;
+          started = true;
+          observer.disconnect();
+          runCount(node, target);
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(section);
+  });
+}
+
+function runCount(node, target) {
+  const duration = 1600;
+  const start = performance.now();
+  node.textContent = '0';
+
+  function frame(now) {
+    const progress = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    node.textContent = String(Math.round(eased * target));
+    if (progress < 1) requestAnimationFrame(frame);
+  }
+
+  requestAnimationFrame(frame);
+}
 
 function initIntroCarousel() {
   const track = document.querySelector('[data-intro-carousel]');
@@ -214,24 +403,6 @@ function initHashScroll() {
   }, 50);
 }
 
-function initCareerList() {
-  const list = document.querySelector('[data-career-list]');
-  if (!list) return;
-
-  list.querySelectorAll('.career-item').forEach((item) => {
-    const trigger = item.querySelector('.career-item-trigger');
-    const panel = item.querySelector('.career-item-panel');
-    if (!trigger || !panel) return;
-
-    trigger.addEventListener('click', () => {
-      const open = !item.classList.contains('is-open');
-      item.classList.toggle('is-open', open);
-      trigger.setAttribute('aria-expanded', String(open));
-      panel.hidden = !open;
-    });
-  });
-}
-
 function initHScroll() {
   const mq = window.matchMedia('(max-width: 899px)');
 
@@ -278,8 +449,11 @@ function initHScroll() {
     let moved = false;
 
     scroller.addEventListener('pointerdown', (e) => {
-      // Touch gebruikt native snap; muis-drag snapten we zelf
+      // Alleen muis-slepen als de rail op een smal scherm echt scrollt.
+      // Pointer capture op desktop slikt anders de klik op een projectfoto.
+      if (!mq.matches) return;
       if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      if (scroller.scrollWidth <= scroller.clientWidth + 8) return;
       dragging = true;
       moved = false;
       startX = e.clientX;
