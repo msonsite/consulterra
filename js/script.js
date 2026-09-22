@@ -181,7 +181,7 @@ function initProjectMotion() {
     const pad = 16;
     const width = Math.min(window.innerWidth - pad * 2, 760);
     const height = window.innerHeight - pad * 2;
-    const media = Math.round(Math.min(height * 0.46, 440));
+    const media = Math.round(Math.min(height * 0.4, 400));
     return {
       left: (window.innerWidth - width) / 2,
       top: pad,
@@ -240,7 +240,7 @@ function initProjectMotion() {
     img.src = sourceImg.currentSrc || sourceImg.src;
     img.alt = sourceImg.alt || title;
     titleEl.textContent = title;
-    detailEl.textContent = detail ? detail.textContent.trim() : '';
+    detailEl.innerHTML = detail ? detail.innerHTML : '';
     kicker.textContent = kickerText;
     kicker.hidden = !kickerText;
     root.hidden = false;

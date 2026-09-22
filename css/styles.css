@@ -1403,11 +1403,75 @@ h2 {
   font-size: 1.02rem;
   line-height: 1.7;
   letter-spacing: -0.01em;
-  max-width: 34rem;
+  max-width: 36rem;
 }
 
 .project-card-detail:empty {
   display: none;
+}
+
+.project-card-detail p {
+  margin: 0;
+}
+
+.project-card-detail p + p,
+.project-card-detail .project-specs {
+  margin-top: 0.95rem;
+}
+
+.project-detail-meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-specs {
+  display: grid;
+  gap: 0.7rem 1.25rem;
+  margin: 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 520px) {
+  .project-specs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.project-specs > div {
+  min-width: 0;
+}
+
+.project-specs dt {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+
+.project-specs dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.project-card-detail a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.project-card-detail a:hover,
+.project-card-detail a:focus-visible {
+  text-decoration-color: currentColor;
 }
 
 .project-card-close {
