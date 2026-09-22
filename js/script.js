@@ -165,6 +165,7 @@ function initProjectMotion() {
   const kicker = card.querySelector('[data-project-kicker]');
   const titleEl = card.querySelector('[data-project-title]');
   const detailEl = card.querySelector('[data-project-detail]');
+  const body = card.querySelector('.project-card-body');
   const closeBtn = card.querySelector('.project-card-close');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   const ease = 'cubic-bezier(0.16, 1, 0.3, 1)';
@@ -243,6 +244,7 @@ function initProjectMotion() {
     detailEl.innerHTML = detail ? detail.innerHTML : '';
     kicker.textContent = kickerText;
     kicker.hidden = !kickerText;
+    if (body) body.scrollTop = 0;
     root.hidden = false;
 
     const origin = boxOf(article);
@@ -253,6 +255,7 @@ function initProjectMotion() {
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
+        if (body) body.scrollTop = 0;
         root.classList.add('is-open');
         place(end, end.media, true);
         closeBtn.focus({ preventScroll: true });
