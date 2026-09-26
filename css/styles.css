@@ -16,12 +16,14 @@
   --field-deep: #0d4a3c;
   --field-glow: #1a8f7a;
   --sand: #9a8b78;
+  --radius-photo: 1rem;
 
   --font-display: "Newsreader", "Georgia", serif;
   --font-body: "IBM Plex Sans", system-ui, sans-serif;
 
   --header-h: 5.25rem;
   --gutter: 1.25rem;
+  --gutter-mobile: 1.25rem;
   --max: 81.25rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -134,7 +136,7 @@ main {
 }
 
 .container {
-  width: min(100% - 1.5rem, var(--max));
+  width: min(100% - (var(--gutter-mobile) * 2), var(--max));
   margin-inline: auto;
   min-width: 0;
 }
@@ -183,7 +185,7 @@ main {
   position: relative;
   z-index: 2;
   height: 100%;
-  width: min(100% - 1.25rem, var(--max));
+  width: min(100% - (var(--gutter-mobile) * 2), var(--max));
   margin-inline: auto;
   display: flex;
   align-items: center;
@@ -458,7 +460,7 @@ main {
 .hero-content {
   position: relative;
   z-index: 1;
-  width: min(100% - 1.5rem, var(--max));
+  width: min(100% - (var(--gutter-mobile) * 2), var(--max));
   margin: 0 auto;
   padding: calc(var(--header-h) + 1.5rem) 0 3.5rem;
   max-width: 40rem;
@@ -596,7 +598,7 @@ main {
 
 @media (max-width: 767px) {
   .hero-content {
-    width: min(100% - 2.5rem, var(--max));
+    width: min(100% - (var(--gutter-mobile) * 2), var(--max));
     margin-inline: auto;
     padding: calc(var(--header-h) + 1.2rem) 0 3.25rem;
     max-width: none;
@@ -994,7 +996,7 @@ h2 {
   background: var(--bg-warm);
   aspect-ratio: 4 / 5;
   max-width: 26rem;
-  border-radius: 2px;
+  border-radius: var(--radius-photo);
 }
 
 .about-portrait img {
@@ -1052,6 +1054,7 @@ h2 {
   overflow: hidden;
   position: relative;
   border: 0;
+  border-radius: var(--radius-photo);
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -1529,7 +1532,7 @@ h2 {
 .project-slide {
   position: relative;
   height: clamp(18rem, 70vw, 22rem);
-  border-radius: 20px;
+  border-radius: calc(var(--radius-photo) + 0.25rem);
   overflow: hidden;
   background: var(--navy-mid);
   box-shadow: 0 14px 34px rgba(11, 26, 34, 0.14);
@@ -1670,7 +1673,7 @@ h2 {
   overflow: hidden;
   background: var(--white);
   color: var(--ink);
-  border-radius: 20px;
+  border-radius: calc(var(--radius-photo) + 0.25rem);
   box-shadow: 0 14px 34px rgba(11, 26, 34, 0.14);
 }
 
@@ -2730,8 +2733,8 @@ h2 {
 
 .cookie-banner {
   position: fixed;
-  left: max(0.75rem, env(safe-area-inset-left));
-  right: max(0.75rem, env(safe-area-inset-right));
+  left: max(var(--gutter-mobile), env(safe-area-inset-left));
+  right: max(var(--gutter-mobile), env(safe-area-inset-right));
   bottom: max(0.75rem, env(safe-area-inset-bottom));
   z-index: 200;
   max-width: 34rem;
@@ -2941,7 +2944,7 @@ h2 {
   }
 
   .header-inner {
-    width: min(100% - 1rem, var(--max));
+    width: min(100% - (var(--gutter-mobile) * 2), var(--max));
     gap: 0.45rem;
   }
 
@@ -2967,7 +2970,7 @@ h2 {
   }
 
   .hero-content {
-    width: min(100% - 2.25rem, var(--max));
+    width: min(100% - (var(--gutter-mobile) * 2), var(--max));
     padding-bottom: 3.25rem;
   }
 
