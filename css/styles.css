@@ -1833,7 +1833,69 @@ h2 {
 /* Career */
 
 .section-career {
-  background: var(--bg);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      90% 70% at 0% 18%,
+      color-mix(in srgb, var(--accent) 14%, transparent) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      80% 65% at 100% 82%,
+      color-mix(in srgb, var(--sand) 18%, transparent) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      55% 45% at 60% 45%,
+      color-mix(in srgb, var(--field-glow) 8%, transparent) 0%,
+      transparent 65%
+    ),
+    linear-gradient(
+      180deg,
+      var(--white) 0%,
+      #eef2f4 22%,
+      var(--bg) 50%,
+      #ebe7e1 78%,
+      var(--white) 100%
+    );
+}
+
+.section-career::before,
+.section-career::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: min(7.5rem, 22%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section-career::before {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--white) 0%,
+    color-mix(in srgb, var(--white) 70%, transparent) 45%,
+    transparent 100%
+  );
+}
+
+.section-career::after {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    var(--white) 0%,
+    color-mix(in srgb, var(--white) 70%, transparent) 45%,
+    transparent 100%
+  );
+}
+
+.section-career > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .career-intro {
@@ -1901,6 +1963,7 @@ h2 {
   padding: 1.35rem 1.25rem;
   background: var(--white);
   border: 0;
+  border-radius: 0.55rem;
 }
 
 .career-row time {
@@ -1994,6 +2057,7 @@ h2 {
   align-items: center;
   padding: 2rem 1.4rem;
   background: var(--white);
+  border-radius: 0.55rem;
 }
 
 .side-role-label {
@@ -2048,71 +2112,6 @@ h2 {
 
   .side-role-logo {
     width: 12rem;
-    justify-self: end;
-  }
-}
-
-/* Education */
-
-.section-edu {
-  background: var(--white);
-}
-
-.edu-layout {
-  display: grid;
-  gap: 1.15rem;
-  align-items: start;
-  border-top: 1px solid var(--line);
-  padding-top: 1.35rem;
-}
-
-.edu-copy h2 {
-  font-size: clamp(1.7rem, 8vw, 2.15rem);
-  max-width: 12em;
-}
-
-.edu-meta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.2rem;
-  margin: 0.75rem 0 0;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.edu-meta time {
-  color: var(--accent);
-}
-
-.edu-mark {
-  display: block;
-  width: min(10.5rem, 62%);
-  height: auto;
-}
-
-@media (min-width: 800px) {
-  .edu-layout {
-    grid-template-columns: minmax(0, 1fr) 13.5rem;
-    gap: 3.5rem;
-    align-items: center;
-    padding-top: 2.25rem;
-  }
-
-  .edu-copy h2 {
-    font-size: clamp(2rem, 4.5vw, 3rem);
-    max-width: none;
-  }
-
-  .edu-meta {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.35rem 1.15rem;
-    margin-top: 1rem;
-  }
-
-  .edu-mark {
-    width: 13.5rem;
     justify-self: end;
   }
 }
